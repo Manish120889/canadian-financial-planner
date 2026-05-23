@@ -38,4 +38,5 @@ export function exportToExcel(result: CalculationResult) {
 
   // Save
   const fileName = `financial-plan-${new Date().toISOString().split('T')[0]}.xlsx`
-  XLSX.writeFile(workbook, f
+  XLSX.writeFile(workbook, fileName)
+}
