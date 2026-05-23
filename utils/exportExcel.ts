@@ -30,7 +30,7 @@ export function exportToExcel(result: CalculationResult) {
   ]
 
   result.yearlyBreakdown.forEach((year) => {
-    detailData.push([year.year, year.salary, year.tax, year.rrsp, year.tfsa, year.fhsa, year.netWorth])
+    detailData.push([year.year.toString(), year.salary, year.tax, year.rrsp, year.tfsa, year.fhsa, year.netWorth])
   })
 
   const detailSheet = XLSX.utils.aoa_to_sheet(detailData)
@@ -38,5 +38,4 @@ export function exportToExcel(result: CalculationResult) {
 
   // Save
   const fileName = `financial-plan-${new Date().toISOString().split('T')[0]}.xlsx`
-  XLSX.writeFile(workbook, fileName)
-}
+  XLSX.writeFile(workbook, f
