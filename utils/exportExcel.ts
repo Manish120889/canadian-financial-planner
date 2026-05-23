@@ -24,7 +24,7 @@ export function exportToExcel(result: CalculationResult) {
   XLSX.utils.book_append_sheet(workbook, summarySheet, 'Summary')
 
   // Detailed sheet
-  const detailData = [
+  const detailData: (string | number)[][] = [
     ['YEARLY BREAKDOWN'],
     ['Year', 'Salary', 'Tax', 'RRSP', 'TFSA', 'FHSA', 'Net Worth'],
   ]
